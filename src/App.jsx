@@ -25,9 +25,11 @@ function App() {
         <span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
       </div>
       <div>
-        {running ? ()}
-        <button onClick={()=>{setRunning(true)}}>Start</button>
-        <button onClick={()=>{setRunning(false)}}>Stop</button>
+        {running ? 
+        (<button onClick={()=>{setRunning(false)}}>Stop</button>) : 
+        (<button onClick={()=>{setRunning(true)}}>Start</button>) }
+        
+        
         <button onClick={()=>{setTime(0)}}>Reset</button>
       </div>
     </>
